@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Platform/Platform.gd" type="Script" id=1]
+[ext_resource path="res://AutoTile2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.6116, 7.58858 )
+
+[node name="Platform3" type="Node2D"]
+position = Vector2( -137.587, -61.3009 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Kinematic" type="KinematicBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Kinematic"]
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="Kinematic"]
+position = Vector2( -0.340576, 0 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 16 )
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback_process_mode = 0
+playback/repeat = true

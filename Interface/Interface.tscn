@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Interface/StatsPanel.gd" type="Script" id=1]
+
+[node name="Interface" type="Control"]
+margin_right = 512.0
+margin_bottom = 320.0
+
+[node name="StatsPanel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 0.35849
+margin_top = 27.962
+margin_right = 92.3585
+margin_bottom = 67.962
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StatsContainer" type="HBoxContainer" parent="StatsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Life" type="Label" parent="StatsPanel/StatsContainer"]
+margin_right = 26.0
+margin_bottom = 31.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "LIFE
+4"
+align = 1

@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://title_screen/airstrikelaser.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://title_screen/Start.gd" type="Script" id=2]
+[ext_resource path="res://title_screen/arrow_selector.png" type="Texture" id=3]
+[ext_resource path="res://title_screen/Sprite.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 1 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.203922, 0.192157, 0.192157, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+margin_right = 432.0
+margin_bottom = 220.0
+
+[node name="Title" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 432.0
+margin_bottom = 57.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0470588, 0.988235, 0.0392157, 1 )
+custom_colors/font_color_shadow = Color( 0.0117647, 0, 0.368627, 1 )
+text = "Adventurer"
+align = 1
+
+[node name="MenuEntries" type="VBoxContainer" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_top = 61.0
+margin_right = 432.0
+margin_bottom = 220.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Start" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+margin_top = 46.0
+margin_right = 432.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.909804, 0.956863, 0.0705882, 1 )
+custom_colors/font_color_shadow = Color( 0.741176, 0.313726, 0, 1 )
+text = "Start"
+align = 1
+script = ExtResource( 2 )
+
+[node name="Exit" type="Label" parent="ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+modulate = Color( 1, 1, 1, 0.392157 )
+margin_top = 81.0
+margin_right = 432.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.909804, 0.956863, 0.0705882, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.745098, 0.368627, 0, 1 )
+text = "Exit"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="ColorRect/MarginContainer/VBoxContainer/MenuEntries"]
+position = Vector2( 0, 63.207 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
